@@ -27,14 +27,35 @@
 
 .linhaComentario:hover {
     cursor: pointer;
-    cursor: pointer;
     transform: scale(1.1);
-    transition: transform .3s;
+    transition: transform .5s;
     border: solid 2px #9e9e9e;
 }
 
 .fa-star {
     color: #ffee58;
+}
+
+.fa-trash { 
+    float: right;
+    color: #9e9e9e;
+}
+
+.fa-trash:hover { 
+    float: right;
+    color: red;
+    transform: scale(1.2);
+    transition: transform .5s;
+}
+
+.iconeAvaliacao:hover, #avaliacao > span:hover{
+    transform: scale(1.2);
+    transition: transform .3s;
+}
+
+#avaliacao > span:hover {
+    transform: scale(1.2);
+    transition: transform .3s;
 }
 
 .iconeAvaliacao:hover {

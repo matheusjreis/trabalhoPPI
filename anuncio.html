@@ -19,7 +19,7 @@
     <h2 class="text-center"> Anúncio</h2>
   </header>
   <main class="container">
-    <div class="container bg-light roundedç]">
+    <div class="container bg-light rounded">
       <div class="row">
         <div class="col-lg-6">
           <img src="#" class="img-responsive center-block d-block mx-auto my-4 imgProdutoAnuncio" alt="Sample Image"
@@ -56,15 +56,20 @@
             <h5 class="modal-title">Deixe um comentário:</h5>
           </div>
           <div class="d-inline mx-auto c-pointer">
-            <span class="fa-regular fa-star fa-xs iconeAvaliacao"></span>
-            <span class="fa-regular fa-star fa-xs iconeAvaliacao"></span>
-            <span class="fa-regular fa-star fa-xs iconeAvaliacao"></span>
-            <span class="fa-regular fa-star fa-xs iconeAvaliacao"></span>
-            <span class="fa-regular fa-star fa-xs iconeAvaliacao"></span>
+            <span class="fa-regular fa-star iconeAvaliacao" id="iconeAvaliacao_1"
+              onclick="preencheAvaliacaoEstrela(1)"></span>
+            <span class="fa-regular fa-star iconeAvaliacao" id="iconeAvaliacao_2"
+              onclick="preencheAvaliacaoEstrela(2)"></span>
+            <span class="fa-regular fa-star iconeAvaliacao" id="iconeAvaliacao_3"
+              onclick="preencheAvaliacaoEstrela(3)"></span>
+            <span class="fa-regular fa-star iconeAvaliacao" id="iconeAvaliacao_4"
+              onclick="preencheAvaliacaoEstrela(4)"></span>
+            <span class="fa-regular fa-star iconeAvaliacao" id="iconeAvaliacao_5"
+              onclick="preencheAvaliacaoEstrela(5)"></span>
           </div>
           <div class="modal-body">
             <textarea name="" id="caixaComentario" cols="60" rows="5" class="mx-auto"></textarea>
-          </div>          
+          </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" onclick="salvarComentario()">Salvar comentário</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal"
@@ -73,11 +78,12 @@
         </div>
       </div>
     </div>
+
     <section class="container" id="secaoReacoes">
       <div class="h5">Comentários:</div>
       <div id="divComentarios">
         <div class="row border border-secondary rounded mt-2 linhaComentario">
-          <div class="col-12 mt-2">
+          <div class="col-10 mt-2">
             <div class="nomeUsuario">
               <span class="fa-solid fa-user mr-3"></span>
               Lionel Messi
@@ -88,53 +94,61 @@
                 <span class="fa-regular fa-star fa-xs"></span>
                 <span class="fa-regular fa-star fa-xs"></span>
               </div>
-
             </div>
+
             <p>Excelente Produto! Entrega rápida e de altíssima qualidade.</p>
+          </div>
+          <div class="col-2">
+            <span class="fas fa-trash d-inline-block mt-2" onclick="deletarComentario()"></i>
           </div>
         </div>
 
-        <div id="divComentarios">
-          <div class="row border border-secondary rounded mt-2 linhaComentario">
-            <div class="col-12 mt-2">
-              <div class="nomeUsuario">
-                <span class="fa-solid fa-user mr-3"></span>
-                Vini Jr
-                <div id="avaliacaoIndividual" class="d-inline">
-                  <span class="fa-solid fa-star fa-xs"></span>
-                  <span class="fa-solid fa-star fa-xs"></span>
-                  <span class="fa-solid fa-star fa-xs"></span>
-                  <span class="fa-solid fa-star fa-xs"></span>
-                  <span class="fa-regular fa-star fa-xs"></span>
-                </div>
-
-              </div>
-              <p>Excelente Produto! Entrega rápida e de altíssima qualidade.</p>
-            </div>
-          </div>
-
-          <div id="divComentarios">
-            <div class="row border border-secondary rounded mt-2 linhaComentario">
-              <div class="col-12 mt-2">
-                <div class="nomeUsuario">
-                  <span class="fa-solid fa-user mr-3"></span>
-                  Lebron James
-                  <div id="avaliacaoIndividual" class="d-inline">
-                    <span class="fa-solid fa-star fa-xs"></span>
-                    <span class="fa-solid fa-star fa-xs"></span>
-                    <span class="fa-solid fa-star fa-xs"></span>
-                    <span class="fa-solid fa-star fa-xs"></span>
-                    <span class="fa-regular fa-star fa-xs"></span>
-                  </div>
-
-                </div>
-                <p>Excelente Produto! Entrega rápida e de altíssima qualidade.</p>
+        <div class="row border border-secondary rounded mt-2 linhaComentario">
+          <div class="col-10 mt-2">
+            <div class="nomeUsuario">
+              <span class="fa-solid fa-user mr-3"></span>
+              Lebron James
+              <div id="avaliacaoIndividual" class="d-inline">
+                <span class="fa-solid fa-star fa-xs"></span>
+                <span class="fa-solid fa-star fa-xs"></span>
+                <span class="fa-regular fa-star fa-xs"></span>
+                <span class="fa-regular fa-star fa-xs"></span>
+                <span class="fa-regular fa-star fa-xs"></span>
               </div>
             </div>
+
+            <p>Excelente Produto! Entrega rápida e de altíssima qualidade.</p>
           </div>
-          <div class="row my-4">
-            <button class="btn btn-outline-primary mx-auto" onclick="adicionarComentario()">+ Adicionar comentário</button>
+          <div class="col-2">
+            <span class="fas fa-trash d-inline-block mt-2" onclick="deletarComentario()"></i>
           </div>
+        </div>
+
+        <div class="row border border-secondary rounded mt-2 linhaComentario">
+          <div class="col-10 mt-2">
+            <div class="nomeUsuario">
+              <span class="fa-solid fa-user mr-3"></span>
+              Steph Curry
+              <div id="avaliacaoIndividual" class="d-inline">
+                <span class="fa-solid fa-star fa-xs"></span>
+                <span class="fa-solid fa-star fa-xs"></span>
+                <span class="fa-solid fa-star fa-xs"></span>
+                <span class="fa-solid fa-star fa-xs"></span>
+                <span class="fa-solid fa-star fa-xs"></span>
+              </div>
+            </div>
+
+            <p>Excelente Produto! Entrega rápida e de altíssima qualidade.</p>
+          </div>
+          <div class="col-2">
+            <span class="fas fa-trash d-inline-block mt-2" onclick="deletarComentario()"></i>
+          </div>
+        </div>
+        <div class="row my-4">
+          <button class="btn btn-outline-primary mx-auto" onclick="adicionarComentario()">+ Adicionar
+            comentário</button>
+        </div>
+      </div>
     </section>
   </main>
   <footer>
