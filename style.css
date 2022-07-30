@@ -32,3 +32,11 @@
     transition: transform .3s;
     border: solid 2px #9e9e9e;
 }
+
+.fa-star {
+    color: #ffee58;
+}
+
+.iconeAvaliacao:hover {
+    cursor: pointer;
+}

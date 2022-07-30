@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="./script.js"></script>
-  <title>Anúncio</title>
 </head>
 
 <body>
@@ -23,9 +22,17 @@
     <div class="container bg-light roundedç]">
       <div class="row">
         <div class="col-lg-6">
-          <img src="#" class="img-responsive center-block d-block mx-auto my-4 imgProdutoAnuncio" alt="Sample Image" onclick="abrirModalImagem()" width="300px" width="300px">
+          <img src="#" class="img-responsive center-block d-block mx-auto my-4 imgProdutoAnuncio" alt="Sample Image"
+            onclick="abrirModalImagem()" width="300px" width="300px">
         </div>
         <div class="col-lg-6 my-auto">
+          <div id="avaliacao">
+            <span class="fa-solid fa-star"></span>
+            <span class="fa-solid fa-star"></span>
+            <span class="fa-solid fa-star"></span>
+            <span class="fa-solid fa-star"></span>
+            <span class="fa-regular fa-star"></span>
+          </div>
           <div id="precoProduto" class="text-secondary h2">
             Mouse multilaser
           </div>
@@ -35,8 +42,10 @@
         </div>
       </div>
       <div class="row">
-        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam
-          at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante.</p>
+        <p class="text-center">Mouse óptico usb classic box full black MO300 Multilaser CX 1 UN.Tipo De Cabo: Pvc
+          Comprimento Do Cabo (Cm): 100
+          Características Principais: Mouse Optico Full Black, 1200 Dpi
+          Conexão Usb: 2.0</p>
       </div>
     </div>
 
@@ -46,55 +55,86 @@
           <div class="modal-header">
             <h5 class="modal-title">Deixe um comentário:</h5>
           </div>
+          <div class="d-inline mx-auto c-pointer">
+            <span class="fa-regular fa-star fa-xs iconeAvaliacao"></span>
+            <span class="fa-regular fa-star fa-xs iconeAvaliacao"></span>
+            <span class="fa-regular fa-star fa-xs iconeAvaliacao"></span>
+            <span class="fa-regular fa-star fa-xs iconeAvaliacao"></span>
+            <span class="fa-regular fa-star fa-xs iconeAvaliacao"></span>
+          </div>
           <div class="modal-body">
             <textarea name="" id="caixaComentario" cols="60" rows="5" class="mx-auto"></textarea>
-          </div>
+          </div>          
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" onclick="salvarComentario()">Salvar comentário</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()">Fechar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+              onclick="fecharModalComentario()">Fechar</button>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="modal" tabindex="-1" role="dialog" id="idModalImagemAnuncio">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <img src="#" alt="Imagem ampliada" class="imgProdutoAnuncio mx-auto" width="500px" width="500px">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <section class="container" id="secaoReacoes">
+      <div class="h5">Comentários:</div>
       <div id="divComentarios">
         <div class="row border border-secondary rounded mt-2 linhaComentario">
           <div class="col-12 mt-2">
-            <div class="nomeUsuario"><span class="fa-solid fa-user mr-3"></span> Matheus Reis</div>
+            <div class="nomeUsuario">
+              <span class="fa-solid fa-user mr-3"></span>
+              Lionel Messi
+              <div id="avaliacaoIndividual" class="d-inline">
+                <span class="fa-solid fa-star fa-xs"></span>
+                <span class="fa-solid fa-star fa-xs"></span>
+                <span class="fa-solid fa-star fa-xs"></span>
+                <span class="fa-regular fa-star fa-xs"></span>
+                <span class="fa-regular fa-star fa-xs"></span>
+              </div>
+
+            </div>
             <p>Excelente Produto! Entrega rápida e de altíssima qualidade.</p>
           </div>
         </div>
-        <div class="row border border-secondary rounded mt-2 linhaComentario">
-          <div class="col-12 mt-2">
-            <div class="nomeUsuario"><span class="fa-solid fa-user mr-3"></span> Tárrick</div>
-            <p>Excelente Produto! Entrega rápida e de altíssima qualidade.</p>
+
+        <div id="divComentarios">
+          <div class="row border border-secondary rounded mt-2 linhaComentario">
+            <div class="col-12 mt-2">
+              <div class="nomeUsuario">
+                <span class="fa-solid fa-user mr-3"></span>
+                Vini Jr
+                <div id="avaliacaoIndividual" class="d-inline">
+                  <span class="fa-solid fa-star fa-xs"></span>
+                  <span class="fa-solid fa-star fa-xs"></span>
+                  <span class="fa-solid fa-star fa-xs"></span>
+                  <span class="fa-solid fa-star fa-xs"></span>
+                  <span class="fa-regular fa-star fa-xs"></span>
+                </div>
+
+              </div>
+              <p>Excelente Produto! Entrega rápida e de altíssima qualidade.</p>
+            </div>
           </div>
-        </div>
-        <div class="row border border-secondary rounded mt-2 linhaComentario">
-          <div class="col-12 mt-2">
-            <div class="nomeUsuario"><span class="fa-solid fa-user mr-3"></span> Rafael Rander</div>
-            <p>Excelente Produto! Entrega rápida e de altíssima qualidade.</p>
+
+          <div id="divComentarios">
+            <div class="row border border-secondary rounded mt-2 linhaComentario">
+              <div class="col-12 mt-2">
+                <div class="nomeUsuario">
+                  <span class="fa-solid fa-user mr-3"></span>
+                  Lebron James
+                  <div id="avaliacaoIndividual" class="d-inline">
+                    <span class="fa-solid fa-star fa-xs"></span>
+                    <span class="fa-solid fa-star fa-xs"></span>
+                    <span class="fa-solid fa-star fa-xs"></span>
+                    <span class="fa-solid fa-star fa-xs"></span>
+                    <span class="fa-regular fa-star fa-xs"></span>
+                  </div>
+
+                </div>
+                <p>Excelente Produto! Entrega rápida e de altíssima qualidade.</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <!-- <div>Comentário 1</div>
-      <div class="mx-auto">
-        <span class="fa-regular fa-comment c-pointer" id="btnAdicionarComentario" onclick="adicionarComentario()"></span>
-      </div> -->
+          <div class="row my-4">
+            <button class="btn btn-outline-primary mx-auto" onclick="adicionarComentario()">+ Adicionar comentário</button>
+          </div>
     </section>
   </main>
   <footer>

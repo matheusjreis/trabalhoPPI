@@ -6,6 +6,13 @@ function adicionarComentario() {
     openModal("idModalComentario");
 }
 
+function fecharModalComentario() {
+  closeModal("idModalComentario");
+}
+
+function fecharModalImagemAnuncio() {
+  closeModal("idModalImagemAnuncio");
+}
 
 function openModal(seletor) {
     document.getElementById(seletor).style.display = "block"
