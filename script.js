@@ -3,21 +3,23 @@ window.onload = () => {
 };
 
 function adicionarComentario() {
-    openModal();
+    openModal("idModalComentario");
 }
 
 
-function openModal() {
-    // document.getElementById("backdrop").style.display = "block"
-    document.getElementById("idModalComentario").style.display = "block"
-    document.getElementById("idModalComentario").classList.add("show");
+function openModal(seletor) {
+    document.getElementById(seletor).style.display = "block"
+    document.getElementById(seletor).classList.add("show");
 }
 
+function abrirModalImagem() {
+  openModal("idModalImagemAnuncio");
+}
 
-function closeModal() {
+function closeModal(seletor) {
     // document.getElementById("backdrop").style.display = "none"
-    document.getElementById("idModalComentario").style.display = "none";
-    document.getElementById("idModalComentario").classList.remove("show");
+    document.getElementById(seletor).style.display = "none";
+    document.getElementById(seletor).classList.remove("show");
 }
 
 function salvarComentario() {
@@ -32,11 +34,14 @@ function salvarComentario() {
           Swal.fire('Comentário salvo com sucesso!', '', 'success')
         }
       }).then(() => {
-        closeModal();
+        closeModal("idModalComentario");
       });
 }
 
 function setImagemProduto(url) { 
-  console.log(document.getElementById("imgProdutoAnuncio"));
-  document.getElementById("imgProdutoAnuncio").src = url;
+  let todasImagensProduto = document.getElementsByClassName("imgProdutoAnuncio");
+
+  for(let i = 0; i < todasImagensProduto.length; i++ ) {
+    todasImagensProduto[i].src = url;
+  }
 }

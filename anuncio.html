@@ -1,61 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>  
-    <script src="./script.js"></script>
-    <title>Anúncio</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="./script.js"></script>
+  <title>Anúncio</title>
 </head>
+
 <body>
-    
-    <header>
-        <h2 class="text-center"> Anúncio</h2>
-    </header>
-    <main class="container">  
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 bg-light">
-                    <img src="#" class="img-responsive center-block d-block mx-auto" alt="Sample Image" id="imgProdutoAnuncio" width="300px" width="300px"> 
-                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante.</p>
-                </div>
-            </div>
-        </div>        
 
-        <div class="modal" tabindex="-1" role="dialog" id="idModalComentario">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Deixe um comentário:</h5>
-                </div>
-                <div class="modal-body">
-                  <textarea name="" id="caixaComentario" cols="60" rows="5" class="mx-auto"></textarea> 
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" onclick="salvarComentario()">Salvar comentário</button>
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()">Fechar</button>
-                </div>
-              </div>
-            </div>
+  <header>
+    <h2 class="text-center"> Anúncio</h2>
+  </header>
+  <main class="container">
+    <div class="container bg-light roundedç]">
+      <div class="row">
+        <div class="col-lg-6">
+          <img src="#" class="img-responsive center-block d-block mx-auto my-4 imgProdutoAnuncio" alt="Sample Image" onclick="abrirModalImagem()" width="300px" width="300px">
+        </div>
+        <div class="col-lg-6 my-auto">
+          <div id="precoProduto" class="text-secondary h2">
+            Mouse multilaser
           </div>
+          <div id="precoProduto" class="text-success h2 mx-auto">
+            R$ 24,99
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam
+          at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante.</p>
+      </div>
+    </div>
 
-        <section class="container" id="secaoReacoes">
-            <div id="divComentarios">
-                <div>
-                    
-                </div>
-              <!-- <div>Comentário 1</div>
-                <div class="mx-auto">
-                    <span class="fa-regular fa-comment c-pointer" id="btnAdicionarComentario" onclick="adicionarComentario()"></span>
-                </div>
-            </div> -->
-        </section>
-    </main>
-    <footer>      
-    </footer>
+    <div class="modal" tabindex="-1" role="dialog" id="idModalComentario">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Deixe um comentário:</h5>
+          </div>
+          <div class="modal-body">
+            <textarea name="" id="caixaComentario" cols="60" rows="5" class="mx-auto"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="salvarComentario()">Salvar comentário</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="idModalImagemAnuncio">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <img src="#" alt="Imagem ampliada" class="imgProdutoAnuncio mx-auto" width="500px" width="500px">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="container" id="secaoReacoes">
+      <div id="divComentarios">
+        <div class="row border border-secondary rounded mt-2 linhaComentario">
+          <div class="col-12 mt-2">
+            <div class="nomeUsuario"><span class="fa-solid fa-user mr-3"></span> Matheus Reis</div>
+            <p>Excelente Produto! Entrega rápida e de altíssima qualidade.</p>
+          </div>
+        </div>
+        <div class="row border border-secondary rounded mt-2 linhaComentario">
+          <div class="col-12 mt-2">
+            <div class="nomeUsuario"><span class="fa-solid fa-user mr-3"></span> Tárrick</div>
+            <p>Excelente Produto! Entrega rápida e de altíssima qualidade.</p>
+          </div>
+        </div>
+        <div class="row border border-secondary rounded mt-2 linhaComentario">
+          <div class="col-12 mt-2">
+            <div class="nomeUsuario"><span class="fa-solid fa-user mr-3"></span> Rafael Rander</div>
+            <p>Excelente Produto! Entrega rápida e de altíssima qualidade.</p>
+          </div>
+        </div>
+      </div>
+      <!-- <div>Comentário 1</div>
+      <div class="mx-auto">
+        <span class="fa-regular fa-comment c-pointer" id="btnAdicionarComentario" onclick="adicionarComentario()"></span>
+      </div> -->
+    </section>
+  </main>
+  <footer>
+  </footer>
 </body>
+
 </html>
